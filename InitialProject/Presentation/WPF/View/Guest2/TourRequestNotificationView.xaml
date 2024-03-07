@@ -1,0 +1,25 @@
+﻿<Window x:Class="InitialProject.Presentation.WPF.View.Guest2.TourRequestNotificationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.Presentation.WPF.View.Guest2"
+        mc:Ignorable="d"
+         Title="Obavjestenje o turi" Height="300" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Button x:Name="Ok"  Content="OK" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" Command="{Binding OkCommand}" Height="30" Width="80"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,7,0,0" TextWrapping="Wrap" Text="Vas zahtjev za turu sa sljedecim osobinama je prihvacen od strane vodica:" VerticalAlignment="Top" Width="280"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,59,0,0" TextWrapping="Wrap"  Text="Drzava:" VerticalAlignment="Top" Width="99"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,89,0,0" TextWrapping="Wrap" Text="Grad:" VerticalAlignment="Top" Width="99"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,119,0,0" TextWrapping="Wrap" Text="Jezik:" VerticalAlignment="Top" Width="99"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,149,0,0" TextWrapping="Wrap" Text="Broj gostiju:" VerticalAlignment="Top" Width="104"/>
+        <TextBlock HorizontalAlignment="Left" Margin="27,184,0,0" TextWrapping="Wrap" Text="Datum izvodjenja:" VerticalAlignment="Top" Width="99"/>
+        <TextBox HorizontalAlignment="Left" Margin="131,149,0,0" TextWrapping="Wrap" Text="{Binding Path=TourRequest.GuestNumber, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="131,182,0,0" TextWrapping="Wrap" Text="{Binding Path=TourRequest.StartingDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="131,119,0,0" TextWrapping="Wrap" Text="{Binding Path=TourRequest.Language.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="131,89,0,0" TextWrapping="Wrap" Text="{Binding Path=TourRequest.Location.City, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="131,59,0,0" TextWrapping="Wrap" Text="{Binding Path=TourRequest.Location.Country, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

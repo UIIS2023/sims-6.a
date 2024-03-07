@@ -1,0 +1,140 @@
+﻿<Window x:Class="InitialProject.Presentation.WPF.View.Owner.AddRenovation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.Presentation.WPF.View.Owner"
+        xmlns:vm ="clr-namespace:InitialProject.Presentation.WPF.ViewModel.Owner"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AddRenovation" Height="500" Width="450">
+    <Window.Resources>
+        <Style x:Key="DataGridColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Foreground" Value="White"  />
+            <Setter Property="Background" Value="DeepSkyBlue"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Infrastructure/Resources/Images/Island.Png"/>
+        </Grid.Background>
+        <Grid  Margin="0,0,326,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40*" ></RowDefinition>
+                <RowDefinition Height="35*" ></RowDefinition>
+                <RowDefinition Height="33*" ></RowDefinition>
+                <RowDefinition Height="40*" ></RowDefinition>
+                <RowDefinition Height="41*" ></RowDefinition>
+                <RowDefinition Height="35*" ></RowDefinition>
+                <RowDefinition Height="46*"></RowDefinition>
+                <RowDefinition Height="214*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label FontSize="10" Foreground="White" FontStyle="Italic" FontWeight="Bold" Margin="0,16,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="66" Grid.RowSpan="2">Start Date:</Label>
+            <DatePicker  BorderBrush="White" x:Name="StartDatePicker" HorizontalAlignment="Center" VerticalAlignment="Top" Height="24" Width="104" Margin="0,1,0,0" Grid.Row="1" SelectedDate="{Binding Path=StartDay, Mode=OneWayToSource, UpdateSourceTrigger=LostFocus}"></DatePicker>
+            <Label FontSize="10" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Row="2" HorizontalAlignment="Center" Width="60" VerticalAlignment="Top" RenderTransformOrigin="0.532,1.19" Height="23" Margin="0,10,0,0">End date:</Label>
+            <DatePicker  BorderBrush="White"  x:Name="EndDatePicker" Grid.Row="3" HorizontalAlignment="Center" Width="102" Height="26" VerticalAlignment="Top" Margin="0,5,0,0" SelectedDate="{Binding Path=EndDay, Mode=OneWayToSource, UpdateSourceTrigger=LostFocus}"/>
+            <Label FontSize="10" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="38">Days:</Label>
+            <TextBox  BorderBrush="White" Grid.Row="4" VerticalAlignment="Top" Height="21" RenderTransformOrigin="0.5,0.5" Margin="11,38,10,0" Grid.RowSpan="2" Text ="{Binding NewRenovation.Days}" />
+            <Button  Content="Search dates"  Grid.Row="6" Margin="11,10,10,10" Command="{Binding SearchCommand}"
+                     FontFamily="Montserrat" Foreground="White"
+                        Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Label FontSize="10" Foreground="White" FontStyle="Italic" FontWeight="Bold"  Grid.Row="7"  Margin="22,40,0,0" HorizontalAlignment="Left" Width="102">Description:</Label>
+
+        </Grid>
+        <Grid  Margin="124,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"></RowDefinition>
+                <RowDefinition Height="113*"></RowDefinition>
+                <RowDefinition Height="82*"></RowDefinition>
+                <RowDefinition Height="28*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Label FontSize="10" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.Row="0" VerticalAlignment="Top"  Height="26" Margin="15,16,-15,0" Grid.RowSpan="2" >Available dates:</Label>
+            <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Background="DeepSkyBlue"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}"
+                      ItemsSource ="{Binding AvailableDates, UpdateSourceTrigger=PropertyChanged}" Margin="15,4,23,0" Grid.Row="1"
+                      SelectedItem="{Binding SelectedDateRange, UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" VerticalAlignment="Top" Height="222">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header ="Start date" Width="*" Binding="{Binding SStartDate}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="End date" Width="*" Binding="{Binding SEndDate}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Row="2" Orientation="Vertical">
+                <TextBox  BorderBrush="DeepSkyBlue" Grid.Row="2" Margin="20,29,20,24" Text="{Binding NewRenovation.Description}" Height="101"/>
+                <TextBlock Text="{Binding NewRenovation.ValidationErrors[Description]}" Foreground="Red"/>
+            </StackPanel>
+           
+            <Button Content="Add" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="60" Command="{Binding AddCommand}"
+                FontFamily="Montserrat" Foreground="White"
+                        Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Content="Cancel" HorizontalAlignment="Left" Margin="118,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="60"
+                FontFamily="Montserrat" Foreground="White"
+                        Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="DeepSkyBlue"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

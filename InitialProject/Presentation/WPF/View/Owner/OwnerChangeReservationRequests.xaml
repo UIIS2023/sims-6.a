@@ -1,0 +1,27 @@
+﻿<Window x:Class="InitialProject.Presentation.WPF.View.Owner.OwnerChangeReservationRequests"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.Presentation.WPF.View.Owner"
+        mc:Ignorable="d"
+        Title="OwnerChangeReservationRequests" Height="450" Width="800">
+    <Grid>
+        <Label>Requests for changing reservations:</Label>
+        <DataGrid Margin="14,29,16,45"
+                  ItemsSource="{Binding Requests}"
+                  SelectedItem="{Binding Path= SelectedRequest, UpdateSourceTrigger=PropertyChanged}"
+                  IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Accommodation Name" Width="*" Binding="{Binding AccommodationName}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="New start date" Width="*" Binding="{Binding NewStartDate}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="New end date" Width="*"  Binding="{Binding NewEndDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Is date range available" Width="*" Binding="{Binding IsDateAvailable}"   ></DataGridTextColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Accept" HorizontalAlignment="Left" Margin="324,399,0,0" VerticalAlignment="Top" Click="Accept_Click"/>
+        <Button Content="Decline" HorizontalAlignment="Left" Margin="442,399,0,0" VerticalAlignment="Top" Click="Decline_Click"/>
+    </Grid>
+</Window>

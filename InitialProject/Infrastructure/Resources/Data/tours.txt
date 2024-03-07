@@ -1,0 +1,16 @@
+1|Tura test|Buenos Aires;Argentina|Kratka tura|Azerbaijani|0|5/28/2023 6:00:33 AM|2|False|CreatedByGuide|-1|True
+2|Tura test8|Belgrade;Serbia|Duga tura|Greek|13|5/11/2023 7:00:13 AM|10|False|CreatedByGuide|-1|True
+3|Tura test9|Belgrade;Serbia|Nova tura|Spanish|10|5/29/2023 7:00:13 AM|10|False|CreatedByGuide|-1|True
+4|Tura test10|Belgrade;Serbia|Najnovija tura|Italian|12|5/26/2023 7:00:13 AM|10|False|CreatedByGuide|-1|True
+5|tura 22|Mexico City;Mexico|1asdf|Armenian|20|5/12/2023 9:00:11 PM|2|True|CreatedByGuide|-1|True
+6|turaaaa|Shanghai;China|asdf|Arabic|20|5/12/2023 9:00:33 PM|2|True|CreatedByGuide|-1|True
+7|asdfkljsaldfk|Mexico City;Mexico|fasd|Armenian|221|5/12/2023 9:00:28 PM|2|True|CreatedByGuide|-1|True
+8|fasdsadf|Mexico City;Mexico|asdf|Belarusian|29|5/12/2023 9:00:31 PM|2|True|CreatedByGuide|-1|True
+9|Tura test11|Tokyo;Japan|asd|Albanian|123|5/15/2023 4:03:00 AM|0|False|CreatedByGuide|-1|True
+10|Tura test12|Dhaka;Bangladesh|asdfas|Arabic|123|5/23/2023 2:02:00 AM|0|False|CreatedByRequest|-1|True
+11|Tura test13|Delhi;India|asd|Amharic|1|5/25/2023 5:06:00 AM|0|False|CreatedByRequest|-1|True
+12|Tura test14|Delhi;India|asd|Amharic|1|5/25/2023 5:06:00 AM|0|False|CreatedByRequest|-1|True
+13|Tura test17|New York City;United States|asdf|Arabic|1|6/13/2023 5:04:00 AM|0|False|CreatedByComplexRequest|13|True
+14|Tura test 232|Dhaka;Bangladesh|Tura test|Arabic|30|5/21/2023 4:06:00 AM|0|False|CreatedByStatistics|13|True
+15|Tura 232|Dhaka;Bangladesh|asdf|Arabic|20|5/19/2023 2:07:00 AM|0|False|CreatedByStatistics|13|True
+16|Tura brza|Dhaka;Bangladesh|asdf|Arabic|20|5/23/2023 6:06:00 AM|0|False|CreatedByStatistics|13|True

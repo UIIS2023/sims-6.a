@@ -1,0 +1,794 @@
+﻿<Window x:Class="InitialProject.Presentation.WPF.View.Owner.OwnerStartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.Presentation.WPF.View.Owner"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="OwnerStartWindow" Height="700" Width="1300">
+    <Window.Resources>
+        <Style x:Key="DataGridColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Foreground" Value="White"  />
+            <Setter Property="Background" Value="DeepSkyBlue"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="20"></RowDefinition>
+            <RowDefinition Height="17*"></RowDefinition>
+            <RowDefinition Height="121*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*"></ColumnDefinition>
+            <ColumnDefinition Width="323*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <Border Grid.Row="1" Grid.Column="0" BorderThickness="0,2,2,2" BorderBrush="#00A76D"></Border>
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0,2,0,2" BorderBrush="#00A76D"></Border>
+        <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,0,2,2" BorderBrush="#00A76D"></Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="0,0,0,2" BorderBrush="#00A76D"></Border>
+
+
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem Header="File"></MenuItem>
+            <MenuItem Header="Edit"></MenuItem>
+            <MenuItem Header="View"></MenuItem>
+            <MenuItem Header="Help"></MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Image Source="/Infrastructure/Resources/Images/BookBuddy_logo1.png" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="235" Margin="6,20,0,0"/>
+        </Grid>
+
+        <Grid Background="DeepSkyBlue" Grid.Row ="2" Grid.Column="0"  x:Name="HomeButtons"  Visibility="Visible" >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label  FontSize="20" Foreground="White" FontStyle="Italic"  Padding="10"  Grid.Row="0" VerticalAlignment="Center" FontWeight="Bold" Margin="9">Home:</Label>
+            <Button Grid.Row="1" Content="All accommodations" HorizontalAlignment="Center" VerticalAlignment="Center" Width="176"  Height="34"
+                FontFamily="Montserrat" Foreground="DeepSkyBlue"
+                Cursor="Hand" Click="AllAccommodations_Button_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="WHite"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="2" Content="Add accommodations" HorizontalAlignment="Center"   VerticalAlignment="Center" Width="176"  Height="34"
+                FontFamily="Montserrat" Foreground="DeepSkyBlue"
+                Cursor="Hand" Click="AddAccommodation_ButtonClick">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="3" Content="Renovations" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="176" Height="34"
+                FontFamily="Montserrat" Foreground="DeepSkyBlue"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="4" Content="Proposal for registration" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="176" Height="34"
+                FontFamily="Montserrat" Foreground="DeepSkyBlue"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="5"  Content="Statistics" HorizontalAlignment="Center"   VerticalAlignment="Center" Width="176" Height="34"
+                 FontFamily="Montserrat" Foreground="DeepSkyBlue"
+                    Command="{Binding AccommodationStatistics}"
+                 Cursor="Hand" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="white"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="6" Content="Delete accommodation" HorizontalAlignment="Center" VerticalAlignment="Center" Width="176" Height="34"
+                FontFamily="Montserrat" Foreground="DeepSkyBlue"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="White"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkSlateBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row ="2" Grid.Column="0" x:Name="GuestsButtons" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label  FontSize="20" Foreground="#00A76D" FontStyle="Italic"  Padding="10" VerticalAlignment="Center" FontWeight="Bold" Margin="25,0,-7,0">Guests:</Label>
+            <Button Grid.Row ="1" Content="Current guests" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="176" Height="34" 
+                FontFamily="Montserrat" Foreground="White"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00A76D"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#006C6D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+            <Button Grid.Row ="2" Content="Guests to review" HorizontalAlignment="Center" VerticalAlignment="Center" Width="176" Height="34" 
+                FontFamily="Montserrat" Foreground="White"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00A76D"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#006C6D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="3" Content="Owner reviews" HorizontalAlignment="Center" VerticalAlignment="Center" Width="176" Height="34" 
+                FontFamily="Montserrat" Foreground="White"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00A76D"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#006C6D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Grid.Row="4" Content="Forum" HorizontalAlignment="Center" VerticalAlignment="Center" Width="176" Height="34"
+                FontFamily="Montserrat" Foreground="White"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00A76D"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#006C6D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row ="2" Grid.Column="0" x:Name="ReservationButtons" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label  FontSize="20" Foreground="#00A76D" FontStyle="Italic"  Padding="10" VerticalAlignment="Center" FontWeight="Bold" Margin="25,0,-7,0">Reservations:</Label>
+            <Button  Grid.Row ="1" Content="All reservations" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="176" Height="34"
+                FontFamily="Montserrat" Foreground="White"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00A76D"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#006C6D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button  Grid.Row ="2" Content="Requests" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="176" Height="34" 
+                FontFamily="Montserrat" Foreground="White"
+                Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00A76D"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#006C6D"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </Grid>
+
+        <Grid x:Name="AllAccommodations"  Grid.Row="2" Grid.Column="1">
+            <Grid Visibility="Collapsed">
+                <Label  FontSize="20" Foreground="GhostWhite" FontStyle="Italic"  Padding="10"  FontWeight="Bold" Height="55" VerticalAlignment="Top" Margin="2,12,-2,0">Your accommodations:</Label>
+                <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Background="DeepSkyBlue"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}"  x:Name="OwnerAccommodations"  ItemsSource="{Binding Path = Accommodations, UpdateSourceTrigger=PropertyChanged}"  Margin="0,79,0,0"
+                    IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" VerticalAlignment="Top" HorizontalAlignment="Center" Width="1030" Height="476" SelectedItem="{Binding StartSelectedAccommodation}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name"  Width="*" Binding="{Binding Name}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Country" Width="*" Binding="{Binding Location.Country}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="City" Width="*" Binding="{Binding Location.City}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Accommodation Type" Width="*" Binding="{Binding TypeOfAccommodation}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Max. Number of guests" Width="*" Binding="{Binding MaxGuestNumber}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Min. Days To Reserve" Width="*" Binding="{Binding MinReservationDays}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+
+            <DockPanel  x:Name="AddAccommodation" Grid.Row="2" Grid.Column="1" Visibility="Collapsed">
+                
+                <Grid DockPanel.Dock="Left" Width="397">
+                    <Grid.RowDefinitions>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,27,0,0">Accommodation name:</Label>
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"  >Country:</Label>
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,23,0,0" >City:</Label>
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,18,0,0" >Type:</Label>
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" Grid.Row="4" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,19,0,0">Maximum guest number:</Label>
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,18,0,0">Minimum days for reservation:</Label>
+                    <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" Padding="10" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,18,0,0">Days for canncelation:</Label>
+
+                    <StackPanel  Orientation="Vertical" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,31,0,0">
+                        <TextBox BorderBrush="#00A76D" Grid.Column="1" Text="{Binding  NewAccommodation.AccommodationName, Mode=TwoWay }" HorizontalAlignment="Center" VerticalAlignment="Center" Width="198" Height="26"  />
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationName]}" Foreground="Red" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="198,31,0,0">
+                        <ComboBox BorderBrush="#00A76D" x:Name="CountryComboBox" Grid.Row="1" Grid.Column="1" IsEditable="True" IsTextSearchEnabled="True" ItemsSource = "{Binding Path = Countries }" Text ="{Binding NewAccommodation.AccommodationCountry, Mode=TwoWay}"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="199" Height="26" />
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationCountry]}" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="77" Margin="198,78,0,0" Grid.RowSpan="2">
+                        <ComboBox BorderBrush="#00A76D" x:Name ="CityComboBox" Grid.Row="2" Grid.Column="1" IsEditable="True" ItemsSource="{Binding Path= Cities }" Text="{Binding NewAccommodation.AccommodationCity,Mode=TwoWay}" Width="199" Height="26" HorizontalAlignment="Center" Margin="0,29,0,0"/>
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationCity]}" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="3" Grid.Column="3" VerticalAlignment="Center" Orientation="Vertical">
+                        <ComboBox BorderBrush="#00A76D" x:Name="TypeComboBox"  IsEditable="True" Width="198" Height="26" Text="{Binding NewAccommodation.AccommodationType}"  VerticalAlignment="Center" HorizontalAlignment="Center"  >
+                            <ComboBoxItem>House</ComboBoxItem>
+                            <ComboBoxItem>Shack</ComboBoxItem>
+                            <ComboBoxItem>Appartment</ComboBoxItem>
+                        </ComboBox>
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationType]}" Foreground="Red"></TextBlock>
+                    </StackPanel >
+                    <StackPanel  Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical">
+                        <TextBox BorderBrush="#00A76D" Grid.Row="4" Grid.Column="1"  Text="{Binding NewAccommodation.AccommodationMaxGuests ,Mode=TwoWay}" HorizontalAlignment="Center" Width="198" Height="26" />
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationMaxGuests]}" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical">
+                        <TextBox BorderBrush="#00A76D" Grid.Row="5" Grid.Column="1" Text="{Binding NewAccommodation.AccommodationReservationMinDays,Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="194" Height="26" />
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationReservationMinDays]}" Foreground="Red"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical">
+                        <TextBox BorderBrush="#00A76D" Grid.Row="6" Grid.Column="1" Text="{Binding NewAccommodation.AccommodationCancelationDays , Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="198" Height="26" />
+                        <TextBlock Text="{Binding NewAccommodation.ValidationErrors[AccommodationCancelationDays]}" Foreground="Red"></TextBlock>
+                    </StackPanel >
+                </Grid>
+
+                <Grid DockPanel.Dock="Right">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="39*"></RowDefinition>
+                            <RowDefinition Height="57*"></RowDefinition>
+                            <RowDefinition Height="394*"></RowDefinition>
+                            <RowDefinition Height="92*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label FontSize="10" Foreground="GhostWhite" FontStyle="Italic" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="175" Margin="0,17,0,0" Grid.RowSpan="2">Url links for accommodation:</Label>
+                        <TextBox BorderBrush="GhostWhite" x:Name="UrlTextBox" HorizontalAlignment="Left" Text="{Binding AccommodationUrl , Mode=TwoWay}" VerticalAlignment="Top" Width="435" Height="30" Grid.Row="1" Margin="79,16,0,0" />
+                        <Button Content="Add" HorizontalAlignment="Left" Margin="524,16,0,0"  VerticalAlignment="Top" Height="30" Width="94"  Grid.Row="1"
+                            Command="{Binding AddUrl}"
+                            FontFamily="Montserrat" Foreground="GhostWhite"
+                            Cursor="Hand">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="DeepSkyBlue"></Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DarkSlateBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="579*"/>
+                                <ColumnDefinition Width="73*"/>
+                            </Grid.ColumnDefinitions>
+                            <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Background="DeepSkyBlue"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}" ItemsSource="{Binding Path=Images}"  IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Margin="79,0,28,0" Height="312" Grid.ColumnSpan="2">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Accommodation Url" Width="*" Binding="{Binding Url}"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+
+
+                        <Button Content="Save" Width="176" Height="30" HorizontalAlignment="Left"   Grid.Row="3"  VerticalAlignment="Top" Margin="264,26,0,0"
+                            Command ="{Binding SaveNewAccommodation}"
+                            FontFamily="Montserrat" Foreground="White"
+                             Cursor="Hand">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="DeepSkyBlue"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="DarkSlateBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </DockPanel>
+
+            <DockPanel  x:Name="GuestsToReview" Grid.Column="1" Grid.Row="2" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Row ="0" FontSize="15" Foreground="White" FontStyle="Italic" FontWeight="Bold"  Padding="10"  DockPanel.Dock="Top" Height="40" Margin="50,47,-50,107" >You can review:</Label>
+                    <Button  Grid.Row ="2" DockPanel.Dock="Bottom" Content="Review" Margin="462,97,475,59" 
+                        Command ="{Binding ReviewGuest}"
+                        FontFamily="Montserrat" Foreground="GhostWhite"
+                            Cursor="Hand">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DeepSkyBlue"></Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="DarkSlateBlue"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"   Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}" ItemsSource="{Binding Path= UsersToReview}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Background="DeepSkyBlue"
+                       SelectedItem="{Binding Path= SelectedUserToReview, UpdateSourceTrigger=PropertyChanged}" Margin="56,97,77,0" VerticalAlignment="Top" Height="339" Grid.RowSpan="3">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Guest id" Width="*" Binding="{Binding Guest1Id}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Accommodation Id" Width="*" Binding="{Binding AccommodationId}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </DockPanel>
+
+            <DockPanel x:Name="OwnerReviews" Grid.Column="1" Grid.Row="2" Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label FontSize="15" Foreground="White" FontStyle="Italic" FontWeight="Bold"   Grid.Row="0" Margin="69,37,-69,208" >Your reviews:</Label>
+                    <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}"   Style="{DynamicResource DataGridStyle1}" Background="DeepSkyBlue" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}"  ItemsSource ="{Binding Path=OwnerRates}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Margin="69,103,95,0" VerticalAlignment="Top" Height="422" Grid.RowSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="User Id"  Width="*" Binding="{Binding UserId}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="AccommodationId"  Width="*" Binding="{Binding AccommodationId}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Cleanliness"  Width="*" Binding="{Binding CleanlinessRate}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Correctness rate"  Width="*" Binding="{Binding CorrectnessRate}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Additional comment"  Width="*" Binding="{Binding Comment}"></DataGridTextColumn>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </DockPanel>
+
+            <DockPanel x:Name="ChangeReservationRequests" Grid.Column="1" Grid.Row="2" Visibility="Collapsed">
+                <DataGrid DockPanel.Dock="Top" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Height="289" Width="776" Margin="0,20,0,0"
+                      ItemsSource="{Binding Requests}"
+                      SelectedItem="{Binding Path= SelectedRequest, UpdateSourceTrigger=PropertyChanged}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Accommodation Name" Width="*" Binding="{Binding AccommodationName}"  ></DataGridTextColumn>
+                        <DataGridTextColumn Header="New start date" Width="*" Binding="{Binding NewStartDate}" ></DataGridTextColumn>
+                        <DataGridTextColumn Header="New end date" Width="*"  Binding="{Binding NewEndDate}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Is date range available" Width="*" Binding="{Binding IsDateAvailable}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DockPanel DockPanel.Dock="Bottom">
+                    <Grid>
+                        <Button Content="Decline" Width="130" Height="30" HorizontalAlignment="Left" Margin="404,2,0,22"  Command="{Binding DeclineChangeReservation}"/>
+                        <Button Content="Accept" Width="130"  Height ="30" HorizontalAlignment="Left" Margin="191,2,0,22" Command="{Binding AcceptChangeReservation}" />
+                    </Grid>
+                </DockPanel>
+            </DockPanel>
+
+            <Grid Grid.Row="2" Grid.Column="1" Visibility="Visible">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70*"></RowDefinition>
+                    <RowDefinition Height="441*"></RowDefinition>
+                    <RowDefinition Height="71*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label FontSize="15" Foreground="White" FontStyle="Italic" FontWeight="Bold"  Padding="10" Margin="66,21,-66,420" Grid.RowSpan="2">Renovations:</Label>
+                <TabControl  VerticalAlignment="Center" HorizontalAlignment="Center" Background="DeepSkyBlue" Grid.Row="1" Width="906" Height="421">
+                    <TabItem Header="AccommodationAvailableForRenovation" >
+                        <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Background="DeepSkyBlue" Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}"  IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Height="385"
+                            ItemsSource="{Binding Accommodations , UpdateSourceTrigger=PropertyChanged}"
+                            SelectedItem="{Binding Path= SelectedAccommodation, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="Accommodation name" Width="*" Binding="{Binding  Name}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="Scheduled renovations">
+                        <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Background="DeepSkyBlue"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}" ItemsSource="{Binding ScheduledRenovations,UpdateSourceTrigger=PropertyChanged}"
+                              SelectedItem="{Binding Path= SelectedRenovation,UpdateSourceTrigger=PropertyChanged}"
+                              IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" Height="390" Margin="0,0,-1,0" VerticalAlignment="Top">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="Accommodation name" Width="*" Binding="{Binding  AccommodationName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Start date" Width="*" Binding="{Binding DateRange.SStartDate}" ></DataGridTextColumn>
+                                <DataGridTextColumn Header="End date" Width="*" Binding="{Binding DateRange.SEndDate}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Description}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </TabItem>
+                    <TabItem Header="Finished renovations">
+                        <DataGrid ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Background="#00A76D"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}"  RowStyle="{DynamicResource DataGridRowStyle2}" ItemsSource="{Binding FinishedRenovations,UpdateSourceTrigger=PropertyChanged}"
+                              IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" VerticalAlignment="Top" Height="383">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn  Header="Accommodation name" Width="*" Binding="{Binding  AccommodationName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Start date" Width="*" Binding="{Binding DateRange.SStartDate}" ></DataGridTextColumn>
+                                <DataGridTextColumn Header="End date" Width="*" Binding="{Binding DateRange.SEndDate}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Description}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </TabItem>
+                </TabControl>
+                <Grid Grid.Row="2" Margin="0,1,0,0">
+                    <Button Content="Add renovation" HorizontalAlignment="Left" Margin="336,18,0,0" VerticalAlignment="Top" Height="26" Width="100" 
+                        Command="{Binding AddRenovation}"
+                        CommandParameter="{Binding SelectedAccommodation}"
+                        FontFamily="Montserrat" Foreground="White"
+                         Cursor="Hand">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DeepSkyBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#006C6D"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Content="Cancel renovation" HorizontalAlignment="Left" Margin="545,0,0,26" Width="100" Height="26" VerticalAlignment="Bottom" 
+                        FontFamily="Montserrat" Foreground="White"
+                        Cursor="Hand"
+                        Command ="{Binding CancelRenovation}">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="DeepSkyBlue"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#006C6D"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Button
+            Grid.Column="1" Content="Reservations"   Grid.Row="1" VerticalAlignment="Center" Width="100" Height="27" Margin="572,0,366,0"
+            FontFamily="Montserrat" Foreground="White"
+            Cursor="Hand">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#00A76D"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#006C6D"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button
+            Grid.Column="1" Content="Home" HorizontalAlignment="Left"  Grid.Row="1" VerticalAlignment="Center" Width="100" Height="27"   
+            FontFamily="Montserrat" Foreground="White"
+            Cursor="Hand" Margin="472,0,0,0">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="DeepSkyBlue"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="DarkSlateBlue"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button
+            Grid.Column="1" Content="Guests" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Width="100" Height="27"   Margin="372,0,0,0"
+            FontFamily="Montserrat" Foreground="White"
+            Cursor="Hand" >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#00A76D"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#006C6D"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image x:Name="zvjezda"  Source="/Infrastructure/Resources/Images/Zvjezda.png"  Grid.Row="1" Height="27" Margin="212,0,716,0" VerticalAlignment="Center" Visibility="Visible" Grid.Column="1"/>
+
+
+    </Grid>
+</Window>

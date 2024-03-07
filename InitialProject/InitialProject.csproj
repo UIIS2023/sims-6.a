@@ -1,0 +1,134 @@
+﻿ <Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Infrastructure/Resources\Images\BookBuddy_logo1.png" />
+    <None Remove="Infrastructure/Resources\Images\calendar.png" />
+    <None Remove="Infrastructure/Resources\Images\delete.png" />
+    <None Remove="Infrastructure/Resources\Images\edit.png" />
+    <None Remove="Infrastructure/Resources\Images\search.png" />
+    <None Remove="Infrastructure/Resources\Images\view.png" />
+    <None Remove="Infrastructure/Resources\Images\Zvjezda.png" />
+    <None Remove="Infrastructure\Resources\Images\262038.png" />
+    <None Remove="Infrastructure\Resources\Images\AccommodationDisplay.png" />
+    <None Remove="Infrastructure\Resources\Images\arrow.png" />
+    <None Remove="Infrastructure\Resources\Images\chat.png" />
+    <None Remove="Infrastructure\Resources\Images\download.png" />
+    <None Remove="Infrastructure\Resources\Images\female_profile.jpg" />
+    <None Remove="Infrastructure\Resources\Images\female_profile.png" />
+    <None Remove="Infrastructure\Resources\Images\hamburher.png" />
+    <None Remove="Infrastructure\Resources\Images\home.png" />
+    <None Remove="Infrastructure\Resources\Images\homePageCommands.png" />
+    <None Remove="Infrastructure\Resources\Images\iconmonstr-x-mark-circle-thin.png" />
+    <None Remove="Infrastructure\Resources\Images\moda-removebg-preview.png" />
+    <None Remove="Infrastructure\Resources\Images\pin1.png" />
+    <None Remove="Infrastructure\Resources\Images\pin2.png" />
+    <None Remove="Infrastructure\Resources\Images\pin3.png" />
+    <None Remove="Infrastructure\Resources\Images\qmark.png" />
+    <None Remove="Infrastructure\Resources\Images\repeat.png" />
+    <None Remove="Infrastructure\Resources\Images\right-arrow.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Infrastructure/Resources\Images\BookBuddy_logo1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure/Resources\Images\delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure/Resources\Images\edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure/Resources\Images\view.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Infrastructure/Resources\Images\calendar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure/Resources\Images\search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure/Resources\Images\Zvjezda.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\262038.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\AccommodationDisplay.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\chat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\download.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\female_profile.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\hamburher.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\iconmonstr-x-mark-circle-thin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\moda-removebg-preview.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\pin1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\pin2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\pin3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\qmark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\repeat.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Infrastructure\Resources\Images\right-arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization" Version="6.1.94" />
+    <PackageReference Include="EcoWpf" Version="7.0.0.14619" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.0" />
+    <PackageReference Include="Microsoft.TeamFoundationServer.ExtendedClient" Version="16.170.0" />
+    <PackageReference Include="Syncfusion.SfChart.WPF" Version="21.1.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Xceed.Wpf.Samples.SampleData">
+      <HintPath>..\..\..\..\Downloads\wpftoolkit-master\wpftoolkit-master\ExtendedWPFToolkitSolution\Libs\Xceed.Wpf.Samples.SampleData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Presentation\WPF\View\Guest2\Views\ToursView.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

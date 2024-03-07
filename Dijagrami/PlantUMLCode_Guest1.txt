@@ -1,0 +1,69 @@
+@startuml
+participant Guest1WindowViewModel as G1W
+participant UserReservationCounterService as URCS
+participant UserReservationCounter as URC
+participant UserReservationCounterRepository as URCR
+participant User as U
+participant UserService as US
+
+G1W -> G1W : InitializeReservationCounter()
+
+activate G1W
+
+    G1W -> URCS: InitializeReservationCounter()
+
+    activate URCS
+
+        URCS -> URCR: GetUserById(userId)
+
+        activate URCR
+        URCR --> URCS: user
+        deactivate URCR
+
+        alt userIsNull
+            URCS -> URC: Create UserReservationCounter
+            activate URC
+            URC --> URCS: return UserReservationCounter
+            deactivate URC
+            URCS -> URCR: SaveNew_UserReservationCounter
+            activate URCR
+            URCR --> URCS: SavedUser
+            deactivate URCR
+            else
+                opt oneYearPassed 
+                   URCS -> URCS: CheckUserForSuperGuest
+                   activate URCS
+                       U-> US: GetUserById
+                       activate U
+                       activate US
+                       US --> U: user
+                       deactivate US
+                       alt reservationCount >= 10
+                           U -> U: UpdatePoints
+                           U -> U: UpdateSuperGuestStatus 
+                       else 
+                           U -> U: UpdatePoints
+                           U -> U: UpdateSuperGuestStatus
+U --> URCS: User
+                          deactivate U
+                          deactivate URCS
+                       end
+                       end
+                       URCS -> US: UpdateUser
+                       activate US
+                       US --> URCS: UpdatedUser
+                       deactivate US
+                   URCS -> URCS: ResetData
+                   activate URCS
+                   activate URC
+                   URC -> URC: SetInitialDateToFirstDayOfTheCurrentYear
+                   URC -> URC: SetReservationCounterTo0
+                   deactivate URC
+                   URCS -> URCR: UpdateUserReservationCounter 
+                   deactivate URCS
+            end
+
+    deactivate URCS
+
+deactivate G1W
+@enduml

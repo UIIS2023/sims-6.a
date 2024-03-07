@@ -1,0 +1,184 @@
+﻿<Window x:Class="InitialProject.Presentation.WPF.View.Guest1.Guest1HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InitialProject.Presentation.WPF.View.Guest1" 
+        xmlns:guest1="clr-namespace:InitialProject.Presentation.WPF.ViewModel.Guest1"
+        d:DataContext="{d:DesignInstance Type=guest1:Guest1HomeWindowViewModel}"
+        mc:Ignorable="d"
+        Title="Guest1HomeWindow" Height="860" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="#EFF2F7">
+    <Window.InputBindings>
+        <KeyBinding Key="F1" Command="{Binding OpenAccommodationDisplay_Command}" />
+        <KeyBinding Key="F2" Command="{Binding  OpenAnywhereAnytime_Command}" />
+        <KeyBinding Key="F3" Command="{Binding OpenChangeReservation_Command}" />
+        <KeyBinding Key="F4" Command="{Binding OpenCancelReservation_Command}" />
+        <KeyBinding Key="F5" Command="{Binding OpenMyRatings_Command}" />
+        <KeyBinding Key="F6" Command="{Binding OpenOwnerRating_Command}" />
+        <KeyBinding Key="F7" Command="{Binding OpenForumCreate_Command}" />
+        <KeyBinding Key="F8" Command="{Binding OpenForumCreate_Command}" />
+    </Window.InputBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="/Infrastructure/Resources/Images/BookBuddy_logo1.png" Width="280" Height="60" Margin="10 0 0 0" HorizontalAlignment="Center"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="1" CornerRadius="0 50 0 0" Background="#006C6D" Height="740" VerticalAlignment="Bottom">
+                <DockPanel>
+                    <Border Width="80" Height="80" Padding="3" Background="White" CornerRadius="100"
+                            DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="30 -30 0 0">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="/Infrastructure/Resources/Images/female_profile.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20,0,0,0">
+                        <TextBlock Text="Welcome, " Foreground="White" FontSize="14"/>
+                        <TextBlock Text="{Binding Username}" FontSize="14" Foreground="White" FontWeight="SemiBold"/>
+                    </StackPanel>
+
+                    <Separator DockPanel.Dock="Top" Height="1" Background="#00787A" Margin="25 20 25 0"/>
+
+                    <StackPanel DockPanel.Dock="Bottom" Margin="20 20 20 20">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 0 5">
+                            <TextBlock Foreground="White" Text="Points: " FontSize="14" />
+                            <TextBlock Text="{Binding Points}" FontSize="14" FontWeight="DemiBold" Foreground="#BB141A"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0 5 0 0">
+                            <TextBlock Foreground="White" Text="Super-Guest Status: " FontSize="14"/>
+                            <TextBlock Text="{Binding Superguest}" FontSize="14" FontWeight="DemiBold" Foreground="#BB141A"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Margin="0,5,0,0" Text="Shortcuts" DockPanel.Dock="Top" FontSize="22" TextAlignment="Center" Foreground="White" FontWeight="SemiBold"/>
+                    <StackPanel>
+                        <TextBlock Text="Reservations" Margin="20 20 0 15" Foreground="#00C4C7" FontSize="16" FontWeight="DemiBold"/>
+                        <Grid Margin="20,0,20,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Make a reservation/ Search for accommodations"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F1" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Margin="20,10,20,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Anywhere/Anytime"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F2" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Margin="20,10,20,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Change reservation"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F3" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Margin="20,10,20,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Cancel reservation"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F4" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        
+                        <Separator DockPanel.Dock="Top" Height="1" Background="#00787A" Margin="25 20 25 0"/>
+                        <TextBlock Text="Reviews" Margin="20 20 0 15" Foreground="#00C4C7" FontSize="16" FontWeight="DemiBold"/>
+                        <Grid Margin="20,0,20,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions> 
+                            <TextBlock Foreground="White" Text="My Rates"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F5" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Margin="20,10,20,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Rate owner and accommodation"
+                                Width="200" TextWrapping="NoWrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F6" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+
+                        <Separator DockPanel.Dock="Top" Height="1" Background="#00787A" Margin="25 20 25 0"/>
+                        <TextBlock Text="Forums" Margin="20 20 0 15" Foreground="#00C4C7" FontSize="16" FontWeight="DemiBold"/>
+                        <Grid Margin="20,0,20,5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Forums Overview"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F7" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Grid Margin="20,10,20,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="White" Text="Create forum"
+                                Width="200" TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="14"/>
+                            <TextBlock Foreground="White" Text="F8" FontWeight="DemiBold" Grid.Column="1" HorizontalAlignment="Right" FontSize="14" VerticalAlignment="Center"/>
+                        </Grid>
+                        <Separator DockPanel.Dock="Top" Height="1" Background="#00787A" Margin="25 0 25 0"/>
+                    </StackPanel>
+                    
+                </DockPanel>
+            </Border>
+            <StackPanel Grid.Column="1" Height="740" VerticalAlignment="Bottom">
+                <TextBlock Text="Upcoming reservations" FontSize="30" HorizontalAlignment="Left" FontWeight="DemiBold" Margin="20,5,0,20"/>
+                <Separator Height="1" Background="#dae2ea" Margin="20 0 10 0"/>
+                <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
+                    Height="250"  HorizontalAlignment="Left" Margin="20,30,10,0"
+                      ItemsSource="{Binding Path = UpcomingReservations, UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False"
+                          FontSize="16">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn  FontSize="16" Header="Accommodation name" Width="0.7*" Binding="{Binding AccommodationName}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Country" Width="0.5*" Binding="{Binding Country}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="City" Width="0.5*" Binding="{Binding City}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Check-in date" Width="0.5*" Binding="{Binding CheckInDate}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Check-out date" Width="0.5*" Binding="{Binding CheckOutDate}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <TextBlock Text="Previous reservations" FontSize="30" HorizontalAlignment="Left" FontWeight="DemiBold" Margin="20,0,0,20"/>
+                <Separator Height="1" Background="#dae2ea" Margin="20 0 10 0"/>
+                <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
+                    Height="250"  HorizontalAlignment="Left" Margin="20,30,10,0"
+                      ItemsSource="{Binding Path = PreviousReservations, UpdateSourceTrigger=PropertyChanged}"
+                      IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False"
+                          FontSize="16">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn FontSize="16" Header="Accommodation name" Width="0.7*" Binding="{Binding AccommodationName}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Country" Width="0.5*" Binding="{Binding Country}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="City" Width="0.48*" Binding="{Binding City}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Checked-in date" Width="0.5 *" Binding="{Binding CheckInDate}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Checked-out date" Width="0.5*" Binding="{Binding CheckOutDate}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>  
+                <TextBlock Margin="0,10,5,0" Text="F1-for Help" FontSize="14" Foreground="Blue" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

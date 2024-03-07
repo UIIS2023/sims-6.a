@@ -1,0 +1,4 @@
+1|1|nesto vise o ovoj lokaciji|Lagos;Nigeria|4/24/2023 4:06:36 PM|Closed|False
+2|1|Daj vise informacija|Berlin;Germany|4/25/2023 2:16:08 PM|Open|False
+3|1|Nista mi nije na umu hocu vise da saznam o Njujorku|New York City;United States|4/25/2023 4:19:28 PM|Open|False
+4|1|Ima li metro?|Fortaleza;Brazil|5/9/2023 7:06:32 PM|Open|False

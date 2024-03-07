@@ -1,0 +1,6 @@
+1|4|Employeed|5/15/2023 3:05:00 AM
+2|5|Employeed|5/15/2023 3:05:00 AM
+3|6|SuperGuide|5/15/2023 3:05:00 AM
+4|7|SuperGuide|5/15/2023 3:05:00 AM
+5|8|Unemployed|5/15/2023 3:05:00 AM
+6|13|SuperGuide|5/16/2023 9:22:07 AM
